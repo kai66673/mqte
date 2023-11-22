@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Qt-Creator temporary project files
+CMakeLists.txt.user
+
