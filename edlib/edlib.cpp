@@ -23,6 +23,12 @@ EditorsManager *EditorsManager::instanse()
 
 ////////////////////////////////////////////////////////////////
 /// static API
+
+PythonEditor::EditorWidget *EditorsManager::createPythonEditor()
+{
+    return EditorsManager::createPythonEditor(nullptr);
+}
+
 PythonEditor::EditorWidget *EditorsManager::createPythonEditor(QWidget *parent)
 {
     instanse();

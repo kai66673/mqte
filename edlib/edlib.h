@@ -23,5 +23,6 @@ private:
     HighlighterFormatsManager *m_highlighterFormatsManager;
 
 public: // static API
-    static PythonEditor::EditorWidget *createPythonEditor(QWidget *parent = nullptr);
+    static PythonEditor::EditorWidget *createPythonEditor();
+    static PythonEditor::EditorWidget *createPythonEditor(QWidget *parent);
 };
