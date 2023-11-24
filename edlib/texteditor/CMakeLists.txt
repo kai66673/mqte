@@ -27,7 +27,7 @@ set (TEXTEDITOR_HEADERS
     tabsettings.h
     syntaxhighlighter.h
     highlighterformatsmanager.h
-    highlighterformatsconfigurewidget.h
+#    highlighterformatsconfigurewidget.h
     codestylepool.h
     codecselector.h
     convenience.h
@@ -106,7 +106,7 @@ set (TEXTEDITOR_SOURCES
     tabsettings.cpp
     syntaxhighlighter.cpp
     highlighterformatsmanager.cpp
-    highlighterformatsconfigurewidget.cpp
+#    highlighterformatsconfigurewidget.cpp
     codestylepool.cpp
     codecselector.cpp
     convenience.cpp
@@ -157,14 +157,14 @@ set (TEXTEDITOR_SOURCES
     utils/stylehelper.cpp
 )
 
-set (TEXTEDITOR_FORMS
-    highlighterformatsconfigurewidget.ui
-)
+#set (TEXTEDITOR_FORMS
+#    highlighterformatsconfigurewidget.ui
+#)
 
 add_library(${PROJECT_NAME} SHARED
     ${TEXTEDITOR_SOURCES}
     ${TEXTEDITOR_HEADERS}
-    ${TEXTEDITOR_FORMS}
+#    ${TEXTEDITOR_FORMS}
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE

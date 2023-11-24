@@ -2,7 +2,7 @@
 #include <QDir>
 #include <QTextStream>
 
-#include "highlighterformatsconfigurewidget.h"
+//#include "highlighterformatsconfigurewidget.h"
 #include "highlighterformatsmanager.h"
 
 HighlighterFormatData::HighlighterFormatData()
@@ -252,12 +252,12 @@ HighlighterFormatData *HighlighterFormatsManager::highlighterFormatData(const QS
     return it == m_instance->m_languageFormatMap.end() ? 0 : *it;
 }
 
-HighlighterFormatsConfigureWidget *HighlighterFormatsManager::highlighterFormatsConfigureWidget()
-{
-    HighlighterFormatsConfigureWidget *highlighterFormatsConfigureWidget =  new HighlighterFormatsConfigureWidget(m_instance->m_languageFormatsSorted);
-    connect(highlighterFormatsConfigureWidget, SIGNAL(formatsChanged()), m_instance, SLOT(save()));
-    return highlighterFormatsConfigureWidget;
-}
+//HighlighterFormatsConfigureWidget *HighlighterFormatsManager::highlighterFormatsConfigureWidget()
+//{
+//    HighlighterFormatsConfigureWidget *highlighterFormatsConfigureWidget =  new HighlighterFormatsConfigureWidget(m_instance->m_languageFormatsSorted);
+//    connect(highlighterFormatsConfigureWidget, SIGNAL(formatsChanged()), m_instance, SLOT(save()));
+//    return highlighterFormatsConfigureWidget;
+//}
 
 QColor HighlighterFormatsManager::defaultBackgroundColor()
 {

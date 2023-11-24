@@ -11,13 +11,13 @@ namespace PythonEditor {
 
 
 class EDLIB_EXPORT EditorsManager {
-private:
+public:
     EditorsManager();
     ~EditorsManager();
 
-    EditorsManager(const EditorsManager&) = delete;
-    EditorsManager& operator=(const EditorsManager&) = delete;
-
+//    EditorsManager(const EditorsManager&) = delete;
+//    EditorsManager& operator=(const EditorsManager&) = delete;
+private:
     static EditorsManager *instanse();
     static EditorsManager *m_instance;
     HighlighterFormatsManager *m_highlighterFormatsManager;

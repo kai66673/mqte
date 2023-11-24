@@ -12,7 +12,7 @@
 #include "corelib_global.h"
 
 class HighlighterFormatsManager;
-class HighlighterFormatsConfigureWidget;
+//class HighlighterFormatsConfigureWidget;
 
 struct CORELIB_EXPORT HighlighterFormat {
     HighlighterFormat( const QString &name_            = "",
@@ -37,7 +37,7 @@ struct CORELIB_EXPORT HighlighterFormat {
 class CORELIB_EXPORT HighlighterFormatData
 {
     friend class HighlighterFormatsManager;
-    friend class HighlighterFormatsConfigureWidget;
+//    friend class HighlighterFormatsConfigureWidget;
 
 public:
     HighlighterFormatData();
@@ -71,7 +71,7 @@ public:
     static void registerLanguageHighlighter(HighlighterFormatData *data);
     static HighlighterFormatData *highlighterFormatData(const QString &languageId);
 
-    static HighlighterFormatsConfigureWidget *highlighterFormatsConfigureWidget();
+//    static HighlighterFormatsConfigureWidget *highlighterFormatsConfigureWidget();
     static QColor defaultBackgroundColor();
 
     void restore(const QString &configFileName);

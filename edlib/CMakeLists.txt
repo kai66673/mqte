@@ -27,7 +27,7 @@ set (TEXTEDITOR_HEADERS
     texteditor/tabsettings.h
     texteditor/syntaxhighlighter.h
     texteditor/highlighterformatsmanager.h
-    texteditor/highlighterformatsconfigurewidget.h
+#    texteditor/highlighterformatsconfigurewidget.h
     texteditor/codestylepool.h
     texteditor/codecselector.h
     texteditor/convenience.h
@@ -54,7 +54,6 @@ set (TEXTEDITOR_HEADERS
     texteditor/snippets/plaintextsnippetprovider.h
     texteditor/snippets/reuse.h
     texteditor/snippets/snippet.h
-    texteditor/snippets/plaintextsnippetprovider.h
     texteditor/snippets/snippeteditor.h
     texteditor/snippets/snippetscollection.h
     texteditor/snippets/snippetssettings.h
@@ -106,7 +105,7 @@ set (TEXTEDITOR_SOURCES
     texteditor/tabsettings.cpp
     texteditor/syntaxhighlighter.cpp
     texteditor/highlighterformatsmanager.cpp
-    texteditor/highlighterformatsconfigurewidget.cpp
+#    texteditor/highlighterformatsconfigurewidget.cpp
     texteditor/codestylepool.cpp
     texteditor/codecselector.cpp
     texteditor/convenience.cpp
@@ -130,7 +129,6 @@ set (TEXTEDITOR_SOURCES
     texteditor/snippets/isnippetprovider.cpp
     texteditor/snippets/plaintextsnippetprovider.cpp
     texteditor/snippets/snippet.cpp
-    texteditor/snippets/plaintextsnippetprovider.cpp
     texteditor/snippets/snippeteditor.cpp
     texteditor/snippets/snippetscollection.cpp
     texteditor/snippets/snippetssettings.cpp
