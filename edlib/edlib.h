@@ -8,6 +8,9 @@ class HighlighterFormatsManager;
 namespace PythonEditor {
     class EditorWidget;
 }
+namespace CppEditor {
+    class EditorWidget;
+}
 
 
 class EDLIB_EXPORT EditorsManager {
@@ -23,6 +26,6 @@ private:
     HighlighterFormatsManager *m_highlighterFormatsManager;
 
 public: // static API
-    static PythonEditor::EditorWidget *createPythonEditor();
-    static PythonEditor::EditorWidget *createPythonEditor(QWidget *parent);
+    static PythonEditor::EditorWidget *createPythonEditor(QWidget *parent = nullptr);
+    static CppEditor::EditorWidget *createCppEditor(QWidget *parent = nullptr);
 };

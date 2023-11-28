@@ -3,6 +3,7 @@
 %Import QtWidgets/QtWidgetsmod.sip
 
 %Include pythoneditorwidget.sip
+%Include cppeditorwidget.sip
 
 class EditorsManager
 {
@@ -13,4 +14,5 @@ class EditorsManager
 
 public:
     static PythonEditor::EditorWidget *createPythonEditor(QWidget *parent = nullptr);
+    static CppEditor::EditorWidget *createCppEditor(QWidget *parent = nullptr);
 };

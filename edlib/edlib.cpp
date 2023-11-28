@@ -1,7 +1,9 @@
 #include "edlib.h"
 #include "highlighterformatsmanager.h"
 #include "pythonhighlighterformatsdata.h"
+#include "cpphighlighterformatsdata.h"
 #include "pythoneditorwidget.h"
+#include "cppeditor.h"
 
 EditorsManager* EditorsManager::m_instance = nullptr;
 
@@ -9,6 +11,7 @@ EditorsManager::EditorsManager()
 {
     m_highlighterFormatsManager = new HighlighterFormatsManager;
     m_highlighterFormatsManager->registerLanguageHighlighter(new PythonEditor::PythonHighlighterFormatData);
+    m_highlighterFormatsManager->registerLanguageHighlighter(new CppEditor::CppHighlighterFormatData);
 }
 
 EditorsManager::~EditorsManager()
@@ -24,15 +27,18 @@ EditorsManager *EditorsManager::instanse()
 ////////////////////////////////////////////////////////////////
 /// static API
 
-PythonEditor::EditorWidget *EditorsManager::createPythonEditor()
-{
-    return EditorsManager::createPythonEditor(nullptr);
-}
-
 PythonEditor::EditorWidget *EditorsManager::createPythonEditor(QWidget *parent)
 {
     instanse();
     PythonEditor::EditorWidget *widget = new PythonEditor::EditorWidget(parent);
+    widget->onSettingsChanged();
+    return widget;
+}
+
+CppEditor::EditorWidget *EditorsManager::createCppEditor(QWidget *parent)
+{
+    instanse();
+    CppEditor::EditorWidget *widget = new CppEditor::EditorWidget(parent);
     widget->onSettingsChanged();
     return widget;
 }

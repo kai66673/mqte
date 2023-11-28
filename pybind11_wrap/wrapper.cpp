@@ -2,6 +2,7 @@
 
 #include "edlib.h"
 #include "pythoneditor/pythoneditorwidget.h"
+#include "cppeditor/cppeditor.h"
 
 namespace py = pybind11;
 using namespace pybind11::literals;
@@ -14,7 +15,7 @@ PYBIND11_MODULE(pybed, m)
             .def("show", &PythonEditor::EditorWidget::show);
 
     py::class_<EditorsManager, std::unique_ptr<EditorsManager, py::nodelete>> (m, "EditorsManager")
-            .def_static("createPythonEditor", py::overload_cast<>(&EditorsManager::createPythonEditor))
-            .def_static("createPythonEditor", py::overload_cast<QWidget *>(&EditorsManager::createPythonEditor),
-                        py::arg("parent").none(false));
+            .def_static("createPythonEditor", &EditorsManager::createPythonEditor)
+            .def_static("createCppEditor", &EditorsManager::createCppEditor)
+            ;
 }

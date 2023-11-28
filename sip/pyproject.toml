@@ -24,7 +24,8 @@ define-macros = [
     "TEXTEDITOR_LIBRARY",
     "QTCREATOR_UTILS_LIB",
     "CORELIB_LIBRARY",
-    "PYTHONEDITOR_LIBRARY"
+    "PYTHONEDITOR_LIBRARY",
+    "CPPEDITOR_LIBRARY",
 ]
 sip-file = "edlib.sip"
 include-dirs = [
@@ -36,6 +37,8 @@ include-dirs = [
     "../edlib/texteditor/snippets",
     "../edlib/texteditor/codeassist",
     "../edlib/pythoneditor",
+    "../edlib/cppeditor",
+    "../edlib/cppeditor/cplusplus",
 ]
 qmake-QT = ["widgets", "printsupport", "xml", "network"]
 headers = [
@@ -122,7 +125,16 @@ headers = [
     "../edlib/pythoneditor/tools/pythonindenter.h",
     "../edlib/pythoneditor/pythoneditor_global.h",
     "../edlib/pythoneditor/pythoneditorwidget.h",
-    "../edlib/pythoneditor/pythonhighlighterformatsdata.h"
+    "../edlib/pythoneditor/pythonhighlighterformatsdata.h",
+    "../edlib/cppeditor/cppeditor_global.h",
+    "../edlib/cppeditor/cppeditorenums.h",
+    "../edlib/cppeditor/cppeditor.h",
+    "../edlib/cppeditor/cpphighlighter.h",
+    "../edlib/cppeditor/cppdoxygen.h",
+    "../edlib/cppeditor/cpphighlighterformatsdata.h",
+    "../edlib/cppeditor/cplusplus/SimpleLexer.h",
+    "../edlib/cppeditor/cplusplus/Token.h",
+    "../edlib/cppeditor/cplusplus/Lexer.h",
 ]
 sources = [
     "../edlib/edlib.cpp",
@@ -192,5 +204,14 @@ sources = [
     "../edlib/pythoneditor/tools/pythonindenter.cpp",
     "../edlib/pythoneditor/tools/pythonhighlighter.cpp",
     "../edlib/pythoneditor/pythoneditorwidget.cpp",
-    "../edlib/pythoneditor/pythonhighlighterformatsdata.cpp"
+    "../edlib/pythoneditor/pythonhighlighterformatsdata.cpp",
+    "../edlib/cppeditor/cppeditor.cpp",
+    "../edlib/cppeditor/cpphighlighter.cpp",
+    "../edlib/cppeditor/cppdoxygen.cpp",
+    "../edlib/cppeditor/cpphighlighterformatsdata.cpp",
+    "../edlib/cppeditor/cplusplus/SimpleLexer.cpp",
+    "../edlib/cppeditor/cplusplus/Token.cpp",
+    "../edlib/cppeditor/cplusplus/Lexer.cpp",
+    "../edlib/cppeditor/cplusplus/Keywords.cpp",
+    "../edlib/cppeditor/cplusplus/ObjectiveCAtKeywords.cpp",
 ]
