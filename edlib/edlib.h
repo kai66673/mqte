@@ -13,7 +13,8 @@ namespace CppEditor {
 }
 
 
-class EDLIB_EXPORT EditorsManager {
+class EDLIB_EXPORT EditorsManager
+{
 public:
     EditorsManager();
     ~EditorsManager();

@@ -26,6 +26,7 @@ define-macros = [
     "CORELIB_LIBRARY",
     "PYTHONEDITOR_LIBRARY",
     "CPPEDITOR_LIBRARY",
+    "CPPTOOLS_LIBRARY",
 ]
 sip-file = "edlib.sip"
 include-dirs = [
@@ -39,6 +40,7 @@ include-dirs = [
     "../edlib/pythoneditor",
     "../edlib/cppeditor",
     "../edlib/cppeditor/cplusplus",
+    "../edlib/cppeditor/cpptools",
 ]
 qmake-QT = ["widgets", "printsupport", "xml", "network"]
 headers = [
@@ -135,6 +137,15 @@ headers = [
     "../edlib/cppeditor/cplusplus/SimpleLexer.h",
     "../edlib/cppeditor/cplusplus/Token.h",
     "../edlib/cppeditor/cplusplus/Lexer.h",
+    "../edlib/cppeditor/cpptools/cpptools_global.h",
+    "../edlib/cppeditor/cpptools/cppqtstyleindenter.h",
+    "../edlib/cppeditor/cpptools/cppcodeformatter.h",
+    "../edlib/cppeditor/cpptools/cppcodestylepreferences.h",
+    "../edlib/cppeditor/cpptools/cpptoolsconstants.h",
+    "../edlib/cppeditor/cpptools/cpptoolssettings.h",
+    "../edlib/cppeditor/cpptools/cppcodestylesettings.h",
+    "../edlib/cppeditor/cpptools/cppcodestylepreferencesfactory.h",
+
 ]
 sources = [
     "../edlib/edlib.cpp",
@@ -214,4 +225,10 @@ sources = [
     "../edlib/cppeditor/cplusplus/Lexer.cpp",
     "../edlib/cppeditor/cplusplus/Keywords.cpp",
     "../edlib/cppeditor/cplusplus/ObjectiveCAtKeywords.cpp",
+    "../edlib/cppeditor/cpptools/cppqtstyleindenter.cpp",
+    "../edlib/cppeditor/cpptools/cppcodeformatter.cpp",
+    "../edlib/cppeditor/cpptools/cppcodestylepreferences.cpp",
+    "../edlib/cppeditor/cpptools/cpptoolssettings.cpp",
+    "../edlib/cppeditor/cpptools/cppcodestylesettings.cpp",
+    "../edlib/cppeditor/cpptools/cppcodestylepreferencesfactory.cpp",
 ]

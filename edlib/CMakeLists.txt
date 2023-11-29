@@ -181,6 +181,14 @@ set (CPPEDITOR_HEADERS
     cppeditor/cpphighlighter.h
     cppeditor/cppdoxygen.h
     cppeditor/cpphighlighterformatsdata.h
+    cppeditor/cpptools/cpptools_global.h
+    cppeditor/cpptools/cppqtstyleindenter.h
+    cppeditor/cpptools/cppcodeformatter.h
+    cppeditor/cpptools/cppcodestylepreferences.h
+    cppeditor/cpptools/cpptoolsconstants.h
+    cppeditor/cpptools/cpptoolssettings.h
+    cppeditor/cpptools/cppcodestylesettings.h
+    cppeditor/cpptools/cppcodestylepreferencesfactory.h
     cppeditor/cplusplus/SimpleLexer.h
     cppeditor/cplusplus/Token.h
     cppeditor/cplusplus/Lexer.h
@@ -191,6 +199,12 @@ set (CPPEDITOR_SOURCES
     cppeditor/cpphighlighter.cpp
     cppeditor/cppdoxygen.cpp
     cppeditor/cpphighlighterformatsdata.cpp
+    cppeditor/cpptools/cppqtstyleindenter.cpp
+    cppeditor/cpptools/cppcodeformatter.cpp
+    cppeditor/cpptools/cppcodestylepreferences.cpp
+    cppeditor/cpptools/cpptoolssettings.cpp
+    cppeditor/cpptools/cppcodestylesettings.cpp
+    cppeditor/cpptools/cppcodestylepreferencesfactory.cpp
     cppeditor/cplusplus/SimpleLexer.cpp
     cppeditor/cplusplus/Token.cpp
     cppeditor/cplusplus/Lexer.cpp
@@ -231,6 +245,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE QTCREATOR_UTILS_LIB)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CORELIB_LIBRARY)
 target_compile_definitions(${PROJECT_NAME} PRIVATE PYTHONEDITOR_LIBRARY)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CPPEDITOR_LIBRARY)
+target_compile_definitions(${PROJECT_NAME} PRIVATE CPPTOOLS_LIBRARY)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/texteditor)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/texteditor/core)
@@ -241,3 +256,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/tex
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/pythoneditor)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/cppeditor)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/cppeditor/cplusplus)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/cppeditor/cpptools)

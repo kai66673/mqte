@@ -5,10 +5,16 @@
 #include "pythoneditorwidget.h"
 #include "cppeditor.h"
 
+#include <cpptoolssettings.h>
+#include <texteditorsettings.h>
+
 EditorsManager* EditorsManager::m_instance = nullptr;
 
 EditorsManager::EditorsManager()
 {
+    new TextEditor::TextEditorSettings;
+    new CppTools::CppToolsSettings;
+
     m_highlighterFormatsManager = new HighlighterFormatsManager;
     m_highlighterFormatsManager->registerLanguageHighlighter(new PythonEditor::PythonHighlighterFormatData);
     m_highlighterFormatsManager->registerLanguageHighlighter(new CppEditor::CppHighlighterFormatData);

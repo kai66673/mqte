@@ -1,4 +1,5 @@
 #include "cppeditor.h"
+#include "cppqtstyleindenter.h"
 
 namespace CppEditor {
 
@@ -13,7 +14,7 @@ EditorWidget::EditorWidget(QWidget *parent)
     setMarksVisible(true);
     setCodeFoldingSupported(true);
 
-//    setIndenter(new PythonIndenter());
+    setIndenter(new CppTools::CppQtStyleIndenter);
 
     m_highlighter = new Internal::CppHighlighter(document());
 

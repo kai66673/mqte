@@ -72,7 +72,7 @@ class TEXTEDITOR_EXPORT TextEditorSettings : public QObject
     Q_OBJECT
 
 public:
-    explicit TextEditorSettings(QObject *parent);
+    explicit TextEditorSettings(QObject *parent = nullptr);
     ~TextEditorSettings();
 
     static TextEditorSettings *instance();
