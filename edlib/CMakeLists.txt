@@ -212,6 +212,18 @@ set (CPPEDITOR_SOURCES
     cppeditor/cplusplus/ObjectiveCAtKeywords.cpp
 )
 
+set (GOEDITOR_HEADERS
+    goeditor/goeditor_global.h
+    goeditor/goeditor.h
+    goeditor/gohighlighter.h
+    goeditor/goeditorenums.h
+)
+
+set (GOEDITOR_SOURCES
+    goeditor/goeditor.cpp
+    goeditor/gohighlighter.cpp
+)
+
 set (EDLIB_HEADERS
     edlib_global.h
     edlib.h
@@ -228,6 +240,8 @@ add_library(${PROJECT_NAME} SHARED
     ${PYTHONEDITOR_HEADERS}
     ${CPPEDITOR_SOURCES}
     ${CPPEDITOR_HEADERS}
+    ${GOEDITOR_SOURCES}
+    ${GOEDITOR_HEADERS}
     ${EDLIB_SOURCES}
     ${EDLIB_HEADERS}
 )
@@ -246,6 +260,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE CORELIB_LIBRARY)
 target_compile_definitions(${PROJECT_NAME} PRIVATE PYTHONEDITOR_LIBRARY)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CPPEDITOR_LIBRARY)
 target_compile_definitions(${PROJECT_NAME} PRIVATE CPPTOOLS_LIBRARY)
+target_compile_definitions(${PROJECT_NAME} PRIVATE GOEDITOR_LIBRARY)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/texteditor)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/texteditor/core)
@@ -257,3 +272,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/pyt
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/cppeditor)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/cppeditor/cplusplus)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/cppeditor/cpptools)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/goeditor)
