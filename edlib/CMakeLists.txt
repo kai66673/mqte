@@ -217,11 +217,19 @@ set (GOEDITOR_HEADERS
     goeditor/goeditor.h
     goeditor/gohighlighter.h
     goeditor/goeditorenums.h
+    goeditor/goindenter.h
+    goeditor/golexer.h
+    goeditor/gotoken.h
+    goeditor/gocodeformatter.h
 )
 
 set (GOEDITOR_SOURCES
     goeditor/goeditor.cpp
     goeditor/gohighlighter.cpp
+    goeditor/goindenter.cpp
+    goeditor/golexer.cpp
+    goeditor/gotoken.cpp
+    goeditor/gocodeformatter.cpp
 )
 
 set (EDLIB_HEADERS

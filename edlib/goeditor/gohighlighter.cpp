@@ -67,7 +67,7 @@ GoHighlighter::~GoHighlighter()
 
 void GoHighlighter::onFormatSettingsChanged(bool forceRehilight)
 {
-    HighlighterFormatData *formatData = HighlighterFormatsManager::highlighterFormatData(tr("Cpp"));
+    HighlighterFormatData *formatData = HighlighterFormatsManager::highlighterFormatData(tr("Go"));
     for (int i = 0; i < Format_Count; i++)
         formatData->fillTextCharFormat(i, m_formats[i]);
 
