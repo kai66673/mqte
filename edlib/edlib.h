@@ -11,6 +11,9 @@ namespace PythonEditor {
 namespace CppEditor {
     class EditorWidget;
 }
+namespace GoEditor {
+class EditorWidget;
+}
 
 
 class EDLIB_EXPORT EditorsManager
@@ -29,4 +32,5 @@ private:
 public: // static API
     static PythonEditor::EditorWidget *createPythonEditor(QWidget *parent = nullptr);
     static CppEditor::EditorWidget *createCppEditor(QWidget *parent = nullptr);
+    static GoEditor::EditorWidget *createGoEditor(QWidget *parent = nullptr);
 };

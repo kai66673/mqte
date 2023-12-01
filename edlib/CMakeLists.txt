@@ -221,6 +221,7 @@ set (GOEDITOR_HEADERS
     goeditor/golexer.h
     goeditor/gotoken.h
     goeditor/gocodeformatter.h
+    goeditor/gohighlighterformatsdata.h
 )
 
 set (GOEDITOR_SOURCES
@@ -230,6 +231,7 @@ set (GOEDITOR_SOURCES
     goeditor/golexer.cpp
     goeditor/gotoken.cpp
     goeditor/gocodeformatter.cpp
+    goeditor/gohighlighterformatsdata.cpp
 )
 
 set (EDLIB_HEADERS

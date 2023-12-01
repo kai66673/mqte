@@ -39,7 +39,7 @@
 
 #include <fontsettings.h>
 #include <texteditorconstants.h>
-#include <indenter.h>
+//#include <indenter.h>
 
 namespace PythonEditor {
 
@@ -60,8 +60,7 @@ EditorWidget::EditorWidget(QWidget *parent)
 }
 
 EditorWidget::~EditorWidget()
-{
-}
+{ }
 
 /**
   Comments or uncomments selection using Python commenting syntax

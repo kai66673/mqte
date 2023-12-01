@@ -2,8 +2,10 @@
 #include "highlighterformatsmanager.h"
 #include "pythonhighlighterformatsdata.h"
 #include "cpphighlighterformatsdata.h"
+#include "gohighlighterformatsdata.h"
 #include "pythoneditorwidget.h"
 #include "cppeditor.h"
+#include "goeditor.h"
 
 #include <cpptoolssettings.h>
 #include <texteditorsettings.h>
@@ -18,6 +20,7 @@ EditorsManager::EditorsManager()
     m_highlighterFormatsManager = new HighlighterFormatsManager;
     m_highlighterFormatsManager->registerLanguageHighlighter(new PythonEditor::PythonHighlighterFormatData);
     m_highlighterFormatsManager->registerLanguageHighlighter(new CppEditor::CppHighlighterFormatData);
+    m_highlighterFormatsManager->registerLanguageHighlighter(new GoEditor::GoHighlighterFormatData);
 }
 
 EditorsManager::~EditorsManager()
@@ -45,6 +48,14 @@ CppEditor::EditorWidget *EditorsManager::createCppEditor(QWidget *parent)
 {
     instanse();
     CppEditor::EditorWidget *widget = new CppEditor::EditorWidget(parent);
+    widget->onSettingsChanged();
+    return widget;
+}
+
+GoEditor::EditorWidget *EditorsManager::createGoEditor(QWidget *parent)
+{
+    instanse();
+    GoEditor::EditorWidget *widget = new GoEditor::EditorWidget(parent);
     widget->onSettingsChanged();
     return widget;
 }

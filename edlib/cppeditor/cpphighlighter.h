@@ -44,8 +44,6 @@ namespace CppEditor {
 
 namespace Internal {
 
-class CPPEditorWidget;
-
 class CppHighlighter : public TextEditor::SyntaxHighlighter
 {
     Q_OBJECT
@@ -61,12 +59,6 @@ public:
     void setExtraExecSqlEnabled( bool onoff ) { m_extraExecSqlEnabled = onoff; }
 
     void onFormatSettingsChanged( bool forceRehilight = true );
-
-    // Set formats from a sequence of type QTextCharFormat
-    template <class InputIterator>
-    void setFormats(InputIterator begin, InputIterator end) {
-        qCopy(begin, end, m_formats);
-    }
 
     QTextCharFormat labelFormat() const { return m_formats[CppLabelFormat]; }
 

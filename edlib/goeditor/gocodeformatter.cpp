@@ -247,7 +247,7 @@ void GoCodeFormatter::leave()
 
 bool GoCodeFormatter::loadBlockData(const QTextBlock &block, BlockData *data) const
 {
-    TextBlockUserData *userData = TextDocumentLayout::testUserData(block);
+    TextBlockUserData *userData = BaseTextDocumentLayout::testUserData(block);
     if (!userData)
         return false;
     GoCodeFormatterData *goData = static_cast<GoCodeFormatterData *>(userData->codeFormatterData());
@@ -517,7 +517,7 @@ void GoCodeFormatter::restoreCurrentState(const QTextBlock &block)
 
 void GoCodeFormatter::saveBlockData(QTextBlock *block, const BlockData &data) const
 {
-    TextBlockUserData *userData = TextDocumentLayout::userData(*block);
+    TextBlockUserData *userData = BaseTextDocumentLayout::userData(*block);
     GoCodeFormatterData *goData = static_cast<GoCodeFormatterData *>(userData->codeFormatterData());
     if (!goData) {
         goData = new GoCodeFormatterData;
@@ -552,7 +552,7 @@ GoCodeFormatter::CodeState GoCodeFormatter::state(int belowTop) const
 
 int GoCodeFormatter::tokenizeBlock(const QTextBlock &block)
 {
-    int previousState = TextDocumentLayout::lexerState(block.previous());
+    int previousState = BaseTextDocumentLayout::lexerState(block.previous());
     if (block.blockNumber() == 0)
         previousState = 0;
 
@@ -561,7 +561,7 @@ int GoCodeFormatter::tokenizeBlock(const QTextBlock &block)
     m_tokens = lexer.tokenize(m_line, previousState);
     int currentState = lexer.lexerState().state();
 
-    TextEditor::TextDocumentLayout::setLexerState(block, currentState);
+    BaseTextDocumentLayout::setLexerState(block, currentState);
     return currentState;
 }
 
@@ -651,7 +651,7 @@ void GoCodeFormatter::updateStateUntil(const QTextBlock &endBlock)
         if (previousState.isEmpty() || blockData.beginState.isEmpty()
                 || previousState != blockData.beginState)
             break;
-        if (TextEditor::TextDocumentLayout::lexerState(endBlock) == -1)
+        if (BaseTextDocumentLayout::lexerState(endBlock) == -1)
             break;
 
         previousState = blockData.endState;

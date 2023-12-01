@@ -1,4 +1,5 @@
 #include "goeditor.h"
+#include "goindenter.h"
 
 namespace GoEditor {
 
@@ -12,6 +13,10 @@ EditorWidget::EditorWidget(QWidget *parent)
     setParenthesesMatchingEnabled(true);
     setMarksVisible(true);
     setCodeFoldingSupported(true);
+
+    setIndenter(new Internal::GoIndenter);
+
+    m_highlighter = new Internal::GoHighlighter(document());
 }
 
 EditorWidget::~EditorWidget()

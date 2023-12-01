@@ -27,7 +27,7 @@
 
 #include "gotoken.h"
 
-#include <texteditor/textdocumentlayout.h>
+#include <texteditor/basetextdocumentlayout.h>
 #include <texteditor/tabsettings.h>
 
 #include <QtCore/QStack>

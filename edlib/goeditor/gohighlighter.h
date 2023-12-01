@@ -30,6 +30,8 @@
 
 #include <texteditor/syntaxhighlighter.h>
 
+#include <QTextCharFormat>
+
 namespace GoEditor {
 namespace Internal {
 
@@ -38,15 +40,12 @@ class GoHighlighter : public TextEditor::SyntaxHighlighter
     Q_OBJECT
 public:
     explicit GoHighlighter(QTextDocument *parent = 0);
-    ~GoHighlighter();
+
+    virtual void highlightBlock(const QString &text);
 
     void onFormatSettingsChanged(bool forceRehilight = true);
 
-protected:
-    void highlightBlock(const QString &text);
-
 private:
-    void init();
     void onBlockBegin();
     void onBlockEnd();
     int tokenCategory(const GoToken &tk);

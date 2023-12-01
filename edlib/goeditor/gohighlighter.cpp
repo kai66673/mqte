@@ -60,9 +60,6 @@ namespace Internal {
 
 GoHighlighter::GoHighlighter(QTextDocument *parent) :
     SyntaxHighlighter(parent)
-{ init(); }
-
-GoHighlighter::~GoHighlighter()
 { }
 
 void GoHighlighter::onFormatSettingsChanged(bool forceRehilight)
@@ -206,11 +203,6 @@ void GoHighlighter::highlightBlock(const QString &text)
 
     TextEditor::BaseTextDocumentLayout::setParentheses(currentBlock(), parentheses);
     TextEditor::BaseTextDocumentLayout::setFoldingIndent(currentBlock(), foldingIndent);
-}
-
-void GoHighlighter::init()
-{
-//    setTextFormatCategories(Format_Count, styleForFormat);
 }
 
 int GoHighlighter::tokenCategory(const GoToken &tk)
